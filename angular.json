@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "ubi-bike:build:production",
+            "firebaseProject": "ubi-bike-7866d",
+            "firebaseHostingSite": "ubi-bike-7866d"
+          }
         }
       }
     }
