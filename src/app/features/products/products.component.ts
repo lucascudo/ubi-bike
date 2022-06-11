@@ -15,10 +15,10 @@ export class ProductsComponent implements OnInit {
   constructor(private productsService: ProductService) {}
 
   ngOnInit(): void {
-    this.productsService.getProducts().then((products: Product[]) => this.products = products);
+    this.productsService.getProducts().subscribe((products) => this.products = <Product[]> products);
   }
 
   getStores(product: Product): string {
-    return product.stores.map(p => p.name).join(', ');
+    return product.stores.join(', ');
   }
 }

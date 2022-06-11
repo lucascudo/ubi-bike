@@ -8,7 +8,7 @@ export class ProductService {
 
     constructor(private store: Firestore) {}
 
-    async getProducts(): Promise<Product[]> {
-      return <Product[]> await firstValueFrom(collectionData(collection(this.store, 'products')));
+    getProducts() {
+      return collectionData(collection(this.store, 'products'));
     }
 }
