@@ -1,9 +1,5 @@
 <app-base>
   <p-dataView [value]="mobileUsers" [paginator]="true" [rows]="10">
-    <ng-template pTemplate="header">
-      <h1>Users</h1>
-  </ng-template>
-
     <ng-template let-mobileUser pTemplate="listItem">
       <div class="col-12">
         <div class="mobile-user-list-item">

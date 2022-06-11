@@ -1,7 +1,6 @@
 <app-base>
   <p-dataView [value]="products" [paginator]="true" [rows]="10">
     <ng-template pTemplate="header">
-        <h1>Products</h1>
         <app-edit-product
           [name]="editingProduct.name"
           [editing]="editingProduct.name"

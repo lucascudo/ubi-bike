@@ -17,4 +17,8 @@ export class BaseComponent {
       .then(() => this.router.navigate(['/']))
       .catch((e) => alert(e.message));
   }
+
+  getCurrentRoute() {
+    return this.router.url.split('/')[1];
+  }
 }

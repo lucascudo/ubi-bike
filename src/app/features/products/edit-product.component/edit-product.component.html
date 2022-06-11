@@ -1,27 +1,26 @@
-<div class="new-product">
-  <div class="new-product-name">
+<fieldset class="edit-product flex-container">
+  <legend>Edit</legend>
+  <div class="edit-product-name flex-child">
     <span class="p-float-label">
       <input id="float-input" type="text" [(ngModel)]="name" pInputText>
       <label for="float-input">Name</label>
     </span>
   </div>
-  <br>
-  <div class="new-product-quantity">
+  <div class="edit-product-quantity flex-child">
     <span class="p-float-label">
       <input id="float-input" type="text" [(ngModel)]="quantity" pInputText>
       <label for="float-input">Quantity</label>
     </span>
   </div>
-  <br>
-  <span class="new-product-stores">
+  <div class="edit-product-stores flex-child">
     <span class="p-float-label">
       <input id="float-input" type="text" [(ngModel)]="stores" pInputText>
       <label for="float-input">Stores</label>
     </span>
-  </span>
-</div>
-<div class="new-product-actions">
-  <button mat-icon-button aria-label="create" (click)="save()">
-    <mat-icon>save</mat-icon>
-  </button>
-</div>
+  </div>
+  <div class="edit-product-actions flex-child">
+    <button mat-icon-button aria-label="save" alt="save" (click)="save()">
+      <mat-icon>save</mat-icon>
+    </button>
+  </div>
+</fieldset>

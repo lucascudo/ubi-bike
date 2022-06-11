@@ -51,7 +51,7 @@ export class AuthService {
   {
     return login.then(async (res) => {
       if (await this.isAllowed(res)) {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/home']);
       } else {
         this.logout();
         alert("You aren't registered. Contact a system admin.");
