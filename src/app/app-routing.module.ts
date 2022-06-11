@@ -27,6 +27,14 @@ const routes: Routes = [
     ...canActivate(redirectUnauthorizedToLogin),
   },
   {
+    path: 'products',
+    loadChildren: () =>
+      import('./features/products/products.module').then(
+        (m) => m.ProductsModule
+      ),
+    ...canActivate(redirectUnauthorizedToLogin),
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full',

@@ -5,7 +5,6 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
-  user,
   UserCredential
 } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';

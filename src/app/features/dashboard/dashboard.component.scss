@@ -17,22 +17,6 @@ a {
   transition: 0.5s border-bottom;
 }
 
-mat-toolbar {
-  background-color: transparent;
-  display: flex;
-  justify-content: right;
-}
-
-.background {
-  align-items: center;
-  background-image: url("/assets/mountains.png");
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 64px);
-  padding-top: 10%;
-}
-
 .btn {
   background-color: $ubi-bike-blue;
   border-radius: 20px;

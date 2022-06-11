@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <button mat-icon-button aria-label="Menu" [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/dashboard">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+    <button mat-menu-item routerLink="/products">
+      <mat-icon>store</mat-icon>
+      <span>Products</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>history</mat-icon>
+      <span>Achievements</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>receipt</mat-icon>
+      <span>Orders</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>supervisor_accounts</mat-icon>
+      <span>Users</span>
+    </button>
+  </mat-menu>
+  <span>UBI-Bike</span>
+  <span class="spacer"></span>
+  <button mat-icon-button aria-label="Logout" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="background">
+  <ng-content></ng-content>
+</div>

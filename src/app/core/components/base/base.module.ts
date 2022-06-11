@@ -1,24 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardComponent } from './dashboard.component';
+import { BaseComponent } from './base.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { BaseModule } from 'src/app/core/components/base/base.module';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
 @NgModule({
   declarations: [
-    DashboardComponent,
+    BaseComponent
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule,
     MatToolbarModule,
+    RouterModule,
     MatIconModule,
-    BaseModule,
+    MatMenuModule,
+  ],
+  exports: [
+    BaseComponent,
   ]
 })
-export class DashboardModule { }
+export class BaseModule { }
