@@ -1,0 +1,25 @@
+<div class="new-product">
+  <div class="new-product-name">
+    <span class="p-float-label">
+      <input id="float-input" type="text" [(ngModel)]="name" pInputText>
+      <label for="float-input">Name</label>
+    </span>
+  </div>
+  <div class="new-product-quantity">
+    <span class="p-float-label">
+      <input id="float-input" type="text" [(ngModel)]="quantity" pInputText>
+      <label for="float-input">Quantity</label>
+    </span>
+  </div>
+  <span class="new-product-stores">
+    <span class="p-float-label">
+      <input id="float-input" type="text" [(ngModel)]="stores" pInputText>
+      <label for="float-input">Stores</label>
+    </span>
+  </span>
+</div>
+<div class="new-product-actions">
+  <button mat-icon-button aria-label="create" (click)="save()">
+    <mat-icon>save</mat-icon>
+  </button>
+</div>

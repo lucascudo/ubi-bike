@@ -1,5 +1,5 @@
 export interface Product {
   name: string;
-  quantity: number;
+  quantity?: number;
   stores: string[];
 }

@@ -11,6 +11,10 @@ import { ProductService } from './product.service';
 })
 export class ProductsComponent implements OnInit {
   products: Product[];
+  editingProduct: Product = {
+    name: '',
+    stores: [],
+  };
 
   constructor(private productsService: ProductService) {}
 
@@ -20,5 +24,11 @@ export class ProductsComponent implements OnInit {
 
   getStores(product: Product): string {
     return product.stores.join(', ');
+  }
+
+  deleteProduct(productName: string) {
+    if (confirm(`Do you really want to delete ${productName}?`)) {
+      this.productsService.delete(productName).catch(e => alert(e.message));
+    }
   }
 }

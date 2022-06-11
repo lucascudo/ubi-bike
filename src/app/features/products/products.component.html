@@ -2,26 +2,11 @@
   <p-dataView [value]="products" [paginator]="true" [rows]="10">
     <ng-template pTemplate="header">
         <h1>Products</h1>
-        <div class="new-product">
-          <div class="new-product-name">
-            <span class="p-float-label">
-              <input id="float-input" type="text" pInputText>
-              <label for="float-input">Name</label>
-            </span>
-          </div>
-          <div class="new-product-quantity">
-            <span class="p-float-label">
-              <input id="float-input" type="text" pInputText>
-              <label for="float-input">Quantity</label>
-            </span>
-          </div>
-          <span class="new-product-stores">
-            <span class="p-float-label">
-              <input id="float-input" type="text" pInputText>
-              <label for="float-input">Stores</label>
-            </span>
-          </span>
-        </div>
+        <app-create-product
+          [name]="editingProduct.name"
+          [quantity]="editingProduct.quantity"
+          [stores]="editingProduct.stores.join(', ')">
+        </app-create-product>
     </ng-template>
 
     <ng-template let-product pTemplate="listItem">
@@ -33,7 +18,12 @@
               <div class="product-stores">Stores: {{ getStores(product) }}</div>
             </div>
             <div class="product-list-action">
-              <mat-icon aria-label="trash">delete</mat-icon>
+              <button mat-icon-button aria-label="edit" (click)="editingProduct = product">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button aria-label="delete" (click)="deleteProduct(product.name)">
+                <mat-icon>delete</mat-icon>
+              </button>
             </div>
         </div>
       </div>
