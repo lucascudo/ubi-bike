@@ -18,6 +18,6 @@ export class DashboardComponent implements OnInit {
     this.authService
       .logout()
       .then(() => this.router.navigate(['/']))
-      .catch((e) => console.log(e.message));
+      .catch((e) => alert(e.message));
   }
 }

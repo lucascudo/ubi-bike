@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { LoginData } from 'src/app/core/interfaces/login-data.interface';
 import { Router } from '@angular/router';
+import { UserCredential } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-login-page',
@@ -17,17 +18,24 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  private authenticate(login: Promise<UserCredential>)
+  {
+    return login.then(async (res) => {
+      if (await this.authService.isAllowed(res)) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.authService.logout();
+        alert("You are not registered. Contact a system admin.");
+      }
+    })
+    .catch((e) => alert(e.message));
+  }
+
   login(loginData: LoginData) {
-    this.authService
-      .login(loginData)
-      .then(() => this.router.navigate(['/dashboard']))
-      .catch((e) => console.log(e.message));
+    this.authenticate(this.authService.login(loginData));
   }
 
   loginWithGoogle() {
-    this.authService
-      .loginWithGoogle()
-      .then(() => this.router.navigate(['/dashboard']))
-      .catch((e) => console.log(e.message));
+    this.authenticate(this.authService.loginWithGoogle());
   }
 }
