@@ -35,6 +35,14 @@ const routes: Routes = [
     ...canActivate(redirectUnauthorizedToLogin),
   },
   {
+    path: 'users',
+    loadChildren: () =>
+      import('./features/mobile-users/mobile-users.module').then(
+        (m) => m.MobileUsersModule
+      ),
+    ...canActivate(redirectUnauthorizedToLogin),
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full',

@@ -2,12 +2,12 @@
   <p-dataView [value]="products" [paginator]="true" [rows]="10">
     <ng-template pTemplate="header">
         <h1>Products</h1>
-        <app-create-product
+        <app-edit-product
           [name]="editingProduct.name"
           [editing]="editingProduct.name"
           [quantity]="editingProduct.quantity"
           [stores]="editingProduct.stores.join(', ')">
-        </app-create-product>
+        </app-edit-product>
     </ng-template>
 
     <ng-template let-product pTemplate="listItem">

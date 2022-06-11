@@ -7,9 +7,6 @@
 
  RF09.3 – a página achivements, deverá permitir eliminar achievements existentes, atualizando automaticamente a lista de achievements;
 
- RF10 – a página utilizadores, deverá apenas listar os utilizadores registados na aplicação móvel, com a informação do nome, da data de nascimento, do email, da distância percorrida, do ID da bicicleta e dos pontos obtidos;
-
-
 ## Done
  RF01 – utilizadores não registados na plataforma, não terão acesso a qualquer tipo de informação, nem funcionalidade da plataforma;
 
@@ -32,6 +29,8 @@
  RF08.3 – a página loja, deverá permitir eliminar produtos existentes, atualizando automaticamente a lista dos produtos;
 
  RF08.4 – a página loja, deverá permitir editar em cada produto a quantidade em stock, atualizando automaticamente a lista dos produtos;
+
+ RF10 – a página utilizadores, deverá apenas listar os utilizadores registados na aplicação móvel, com a informação do nome, da data de nascimento, do email, da distância percorrida, do ID da bicicleta e dos pontos obtidos;
 
  RF11 – o botão logout, deverá terminar a sessão do utilizador.
 

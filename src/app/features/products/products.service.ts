@@ -4,7 +4,7 @@ import { firstValueFrom, Observable } from 'rxjs';
 import { Product } from 'src/app/core/interfaces/product.interface';
 
 @Injectable()
-export class ProductService {
+export class ProductsService {
     private collectionName: string = 'products';
 
     constructor(private store: Firestore) {}

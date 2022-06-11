@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { BaseModule } from 'src/app/core/base.component/base.module';
 import { MatIconModule } from '@angular/material/icon';
-import { BaseModule } from 'src/app/core/components/base/base.module';
 
 
 
@@ -15,10 +14,9 @@ import { BaseModule } from 'src/app/core/components/base/base.module';
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule,
-    MatToolbarModule,
-    MatIconModule,
     BaseModule,
+    DashboardRoutingModule,
+    MatIconModule,
   ]
 })
 export class DashboardModule { }
