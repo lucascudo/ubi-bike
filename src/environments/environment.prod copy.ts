@@ -1,7 +1,7 @@
 export const environment = {
   firebase: {
     projectId: 'ubi-bike-7866d',
-    appId: '1:1066618490440:web:2d67e6378b76a78791527d',
+    appId: '1:3216618490440:web:2d67e6378b76a787915a18',
     storageBucket: 'ubi-bike-7866d.appspot.com',
     locationId: 'europe-west',
     apiKey: 'API KEY HERE',
