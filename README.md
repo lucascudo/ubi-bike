@@ -1,6 +1,6 @@
 # UbiBike
 
-(https://ubi-bike-7866d.firebaseapp.com/)
+https://ubi-bike-7866d.firebaseapp.com/
 
 ## To do
  RF09.1 – a página achievements, deverá listar todos os achivements que estejam inseridos na base de dados, com a informação da descrição, pontos e ID;
