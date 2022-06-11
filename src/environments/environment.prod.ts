@@ -8,5 +8,6 @@ export const environment = {
     authDomain: 'ubi-bike-7866d.firebaseapp.com',
     messagingSenderId: '1066618490440',
   },
+  autoReload: 300, //seconds
   production: true
 };

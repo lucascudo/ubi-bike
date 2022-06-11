@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.primengConfig.ripple = true;
-    setTimeout(window.location.reload, 300000);
+    if (environment.autoReload) {
+      setTimeout(() => window.location.reload(), environment.autoReload * 1000);
+    }
   }
 }
