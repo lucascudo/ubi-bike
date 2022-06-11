@@ -12,6 +12,7 @@ export class CreateProductComponent {
   @Input() name: string;
   @Input() quantity?: number;
   @Input() stores: string;
+  @Input() editing: string;
 
   constructor(private productsService: ProductService) {}
 
@@ -20,10 +21,11 @@ export class CreateProductComponent {
       name: this.name,
       quantity: this.quantity,
       stores: this.stores.split(',')
-    }).then(() => {
+    }, this.editing).then(() => {
       this.name = '';
-      this.quantity = undefined;
       this.stores = '';
+      this.editing = '';
+      this.quantity = undefined;
     }).catch(e => alert(e.message));
   }
 

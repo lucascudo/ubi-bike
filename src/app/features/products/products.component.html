@@ -4,6 +4,7 @@
         <h1>Products</h1>
         <app-create-product
           [name]="editingProduct.name"
+          [editing]="editingProduct.name"
           [quantity]="editingProduct.quantity"
           [stores]="editingProduct.stores.join(', ')">
         </app-create-product>

@@ -13,8 +13,8 @@ export class ProductService {
       return collectionData(collection(this.store, this.collectionName));
     }
 
-    save(product: Product) {
-      return setDoc(doc(this.store, this.collectionName, product.name), product);
+    save(product: Product, editing?: string) {
+      return setDoc(doc(this.store, this.collectionName, editing ?? product.name), product);
     }
 
     delete(productName: string) {
