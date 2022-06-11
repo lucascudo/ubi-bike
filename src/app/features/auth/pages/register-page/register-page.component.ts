@@ -1,26 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { AuthService } from 'src/app/core/services/auth.service';
 import { LoginData } from 'src/app/core/interfaces/login-data.interface';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.scss'],
 })
-export class RegisterPageComponent implements OnInit {
-  constructor(
-    private readonly authService: AuthService,
-    private readonly router: Router
-  ) {}
+export class RegisterPageComponent {
+  isDisabled: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(private readonly authService: AuthService) {}
 
   register(data: LoginData) {
+    this.isDisabled = true;
     this.authService
       .register(data)
-      .then(() => this.router.navigate(['/login']))
-      .catch((e) => alert(e.message));
+      .catch((e) => alert(e.message))
+      .finally(() => this.isDisabled = false);
   }
 }

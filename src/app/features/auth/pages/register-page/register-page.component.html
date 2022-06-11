@@ -3,7 +3,7 @@
     <div class="form-container">
       <h1>Welcome to UBI-Bike</h1>
       <h5>Register with your email</h5>
-      <app-login-form (formData)="register($event)"></app-login-form>
+      <app-login-form (formData)="register($event)" [disabled]="isDisabled"></app-login-form>
     </div>
     <div class="text-container">
       <h1>Hey Buddy</h1>

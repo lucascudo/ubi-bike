@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -8,10 +8,8 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './base.component.html',
   styleUrls: ['./base.component.scss'],
 })
-export class BaseComponent implements OnInit {
+export class BaseComponent {
   constructor(private authService: AuthService, private router: Router) {}
-
-  ngOnInit(): void {}
 
   logout() {
     this.authService
