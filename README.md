@@ -2,7 +2,7 @@
 
 https://ubi-bike-7866d.firebaseapp.com/
 
-<img src="https://github.com/lucascudo/ubi-bike/raw/main/src/assets/qrcode.png" alt="QRCode" width="264">
+<img src="https://github.com/lucascudo/ubi-bike/raw/main/src/assets/qrcode.png" alt="QRCode" width="320">
 
 ## To do
  RF09.1 – a página achievements, deverá listar todos os achivements que estejam inseridos na base de dados, com a informação da descrição, pontos e ID;
