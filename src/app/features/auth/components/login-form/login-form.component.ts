@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent implements OnInit {
+  @Input() buttonText: string = 'submit';
   @Input() disabled: boolean = false;
   @Output() formData: EventEmitter<{
     email: string;
