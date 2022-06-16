@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import { Firestore, collectionData, collection, doc, setDoc, deleteDoc } from '@angular/fire/firestore';
-import { firstValueFrom, Observable } from 'rxjs';
+import { Firestore, collectionData, collection, doc, setDoc, getDocs, deleteDoc, query } from '@angular/fire/firestore';
 import { Product } from 'src/app/core/interfaces/product.interface';
 
 @Injectable()
@@ -13,8 +12,8 @@ export class ProductsService {
       return collectionData(collection(this.store, this.collectionName));
     }
 
-    save(product: Product, editing?: string) {
-      return setDoc(doc(this.store, this.collectionName, editing ?? product.name), product);
+    save(product: Product) {
+      return setDoc(doc(this.store, this.collectionName, product.name), product);
     }
 
     delete(productName: string) {

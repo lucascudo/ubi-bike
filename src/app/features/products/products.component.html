@@ -3,7 +3,6 @@
     <ng-template pTemplate="header">
         <app-edit-product
           [name]="editingProduct.name"
-          [editing]="editingProduct.name"
           [quantity]="editingProduct.quantity"
           [stores]="editingProduct.stores.join(', ')">
         </app-edit-product>
@@ -18,7 +17,7 @@
               <div class="product-stores">Stores: {{ getStores(product) }}</div>
             </div>
             <div class="product-list-action">
-              <button mat-icon-button aria-label="edit" (click)="editingProduct = product">
+              <button mat-icon-button aria-label="edit" (click)="setEditingProduct(product)">
                 <mat-icon>edit</mat-icon>
               </button>
               <button mat-icon-button aria-label="delete" (click)="deleteProduct(product.name)">

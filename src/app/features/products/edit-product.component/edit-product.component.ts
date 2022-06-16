@@ -10,22 +10,21 @@ import { ProductsService } from '../products.service';
 })
 export class EditProductComponent {
   @Input() name: string;
-  @Input() quantity?: number;
+  @Input() quantity: number | null;
   @Input() stores: string;
-  @Input() editing: string;
 
   constructor(private productsService: ProductsService) {}
 
   save() {
+    const stores = (this.stores.indexOf(';')) ? this.stores.split(';') : this.stores.split(',');
     this.productsService.save({
       name: this.name,
       quantity: this.quantity,
-      stores: this.stores.split(',')
-    }, this.editing).then(() => {
+      stores,
+    }).then(() => {
       this.name = '';
       this.stores = '';
-      this.editing = '';
-      this.quantity = undefined;
+      this.quantity = null;
     }).catch(e => alert(e.message));
   }
 

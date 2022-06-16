@@ -13,17 +13,22 @@ export class ProductsComponent implements OnInit {
   products: Product[];
   editingProduct: Product = {
     name: '',
+    quantity: null,
     stores: [],
   };
 
   constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.productsService.getProducts().subscribe((products) => this.products = <Product[]> products);
+    this.productsService.getProducts().subscribe((products: any) => this.products = <Product[]> products);
   }
 
   getStores(product: Product): string {
     return product.stores.join(', ');
+  }
+
+  setEditingProduct(product: Product) {
+    this.editingProduct = Object.assign({}, product);
   }
 
   deleteProduct(productName: string) {
