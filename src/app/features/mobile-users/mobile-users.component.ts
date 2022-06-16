@@ -16,7 +16,10 @@ export class MobileUsersComponent implements OnInit {
   constructor(private mobileUsersService: MobileUsersService) {}
 
   ngOnInit(): void {
-    this.mobileUsersService.getMobileUsers().subscribe((mu) => this.mobileUsers = <MobileUser[]> mu);
+    this.mobileUsersService.get().subscribe({
+      next: (mu) => this.mobileUsers = <MobileUser[]> mu,
+      error: e => alert(e.message),
+    });
   }
 
   getStores(mobileUser: MobileUser): string {

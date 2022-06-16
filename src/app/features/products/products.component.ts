@@ -10,6 +10,7 @@ import { ProductsService } from './products.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
+
   products: Product[];
   editingProduct: Product = {
     name: '',
@@ -19,21 +20,23 @@ export class ProductsComponent implements OnInit {
 
   constructor(private productsService: ProductsService) {}
 
-  ngOnInit(): void {
-    this.productsService.getProducts().subscribe((products: any) => this.products = <Product[]> products);
+  ngOnInit() {
+    this.productsService.get().subscribe({
+      next: (products: any) => this.products = <Product[]> products,
+      error: e => alert(e.message),
+    });
   }
 
-  getStores(product: Product): string {
-    return product.stores.join(', ');
+  deleteProduct(productName: string) {
+    confirm(`Do you really want to delete ${productName}?`) &&
+      this.productsService.delete(productName).catch(e => alert(e.message));
   }
 
   setEditingProduct(product: Product) {
     this.editingProduct = Object.assign({}, product);
   }
 
-  deleteProduct(productName: string) {
-    if (confirm(`Do you really want to delete ${productName}?`)) {
-      this.productsService.delete(productName).catch(e => alert(e.message));
-    }
+  getStores(product: Product): string {
+    return product.stores.join(', ');
   }
 }

@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { BaseFirestoreService } from 'src/app/core/services/base-firestore.service';
 
-@Injectable()
-export class MobileUsersService extends BaseFirestoreService {
+@Injectable({
+  providedIn: 'root'
+})
+export class AchievementsService extends BaseFirestoreService {
   constructor(store: Firestore) {
-    super(store, 'mobileUsers');
+    super(store, 'achievements');
   }
 }

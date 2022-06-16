@@ -35,6 +35,14 @@ const routes: Routes = [
     ...canActivate(redirectUnauthorizedToLogin),
   },
   {
+    path: 'achievements',
+    loadChildren: () =>
+      import('./features/achievements/achievements.module').then(
+        (m) => m.AchievementsModule
+      ),
+    ...canActivate(redirectUnauthorizedToLogin),
+  },
+  {
     path: 'users',
     loadChildren: () =>
       import('./features/mobile-users/mobile-users.module').then(
