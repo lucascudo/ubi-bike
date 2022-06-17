@@ -6,7 +6,7 @@
         Want to create an awesome account to access this awesome app? Go ahead
         and click the button below!
       </p>
-      <button mat-button routerLink="/register">Sign up</button>
+      <button mat-button routerLink="/register">register</button>
     </div>
     <div class="form-container">
       <h1>Welcome to UBI-Bike</h1>
@@ -14,7 +14,8 @@
         Sign In with Google
       </button>
       <h5>Or sign in with your email</h5>
-      <app-login-form (formData)="login($event)"></app-login-form>
+      <app-login-form [disabled]="isDisabled" buttonText="login" (formData)="login($event)"></app-login-form>
+      <p>or <a routerLink="/register">register</a></p>
     </div>
   </div>
 </div>

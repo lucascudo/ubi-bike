@@ -8,7 +8,7 @@ import {
 
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
-const redirectLoggedInToHome = () => redirectLoggedInTo(['dashboard']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 
 
 const routes: Routes = [
@@ -19,10 +19,34 @@ const routes: Routes = [
     ...canActivate(redirectLoggedInToHome),
   },
   {
-    path: 'dashboard',
+    path: 'home',
     loadChildren: () =>
       import('./features/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
+      ),
+    ...canActivate(redirectUnauthorizedToLogin),
+  },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./features/products/products.module').then(
+        (m) => m.ProductsModule
+      ),
+    ...canActivate(redirectUnauthorizedToLogin),
+  },
+  {
+    path: 'achievements',
+    loadChildren: () =>
+      import('./features/achievements/achievements.module').then(
+        (m) => m.AchievementsModule
+      ),
+    ...canActivate(redirectUnauthorizedToLogin),
+  },
+  {
+    path: 'users',
+    loadChildren: () =>
+      import('./features/mobile-users/mobile-users.module').then(
+        (m) => m.MobileUsersModule
       ),
     ...canActivate(redirectUnauthorizedToLogin),
   },

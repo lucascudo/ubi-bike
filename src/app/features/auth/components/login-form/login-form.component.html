@@ -17,8 +17,8 @@
     </mat-error>
   </mat-form-field>
   <div class="form-footer">
-    <button [disabled]="form.invalid" mat-raised-button type="submit">
-      Submit
+    <button [disabled]="form.invalid" mat-raised-button type="submit" [disabled]="disabled">
+      {{ buttonText }}
     </button>
   </div>
 </form>
